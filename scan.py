@@ -1,6 +1,4 @@
 import os
-os.system("sudo apt-get install libzbar0
-"
 from pyzbar.pyzbar import decode
 from PIL import Image
 

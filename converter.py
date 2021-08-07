@@ -1,12 +1,11 @@
 import requests
-from bs4 import BeautifulSoup
-
+import json
 
 def get_title(url):
-    URL = f"https://www.barcodable.com/upc/{url}"
+    URL = f"https://api.upcitemdb.com/prod/trial/lookup?upc={url}"
     r = requests.get(URL)
-    soup = BeautifulSoup(r.content, 'html5lib')
-    text = soup.findAll('h2', {'class': 'mb64 mb-xs-32'})[0].text
+    obj = json.loads(r.content)    # obj now contains a dict of the data
+    text = obj['items'][0]['title']
     return text
 
-print(get_title('041900076382'))
+print(get_title('0078742351889'))

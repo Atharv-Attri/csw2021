@@ -19,6 +19,15 @@ def allowed_file(filename):
 def home():
     return render_template('index.html', text="Hello, world")
 
+@app.route("/can")
+def can():
+    return render_template('can.html')
+
+@app.route("/cannot")
+def cannot():
+    return render_template('cannot.html')
+
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
