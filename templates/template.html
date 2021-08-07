@@ -12,10 +12,10 @@
   {% block head %} {% endblock %}
   <title>{% block title %} {% endblock %}</title>
   </head>
-  <body class="flex flex-col min-h-screen ">
-    <div class="flex-grow">
+  <body class="flex flex-col min-h-screen flex flex-col h-screen justify-between">
+    <main class="flex-grow">
      {% block content %} {% endblock %}
-    </div>
+    </main>
   </body>
   {% include "footer.html" %}
 </html>
