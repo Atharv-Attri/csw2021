@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+{% block title %}Home| Nameofthisthing{% endblock %}
+
+{% block content %}
+<h1>Title</h1>
+<h2>Your Guide to Recycling</h2>
+<h3> To upload your image click choose file </h3>
+{% include "upload.html" %}
+<h3> Steps to navigate through our website </h3>
+<h4> Step 1: Open up your camera and scan the barcode on the product </h4>
+<h4> Step 2: Upload the image using the button provided below </h4>
+<h4> Step 3: Your result will now pop up on whether or not your product is recyclable </h4>
+<h4> If your product is not recyclable, our website will show you recyclable alternatives to the product that your are buying </h4>
+<h4> If you product is recyclable, you will be notified of that and it will also show you some recycling centers near you that will accept your item </h4>
+{% endblock %}
+
