@@ -41,7 +41,8 @@
         "flash",
         "ram",
         "disk",
-        "battery"
+        "battery",
+        "batteries"
         
     ],
     "recycle":[
