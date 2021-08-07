@@ -82,13 +82,13 @@ def upload_file():
             title_type = converter.get_type(title)
             if title_type == "ewaste":
                 return render_template('ewaste.html', title=title, image=url_for('static', filename='image/'+filename))
-            elif title_type == "recycle":
-                return render_template('can.html', title=title, image=url_for('static', filename='image/'+filename))
+            
             elif title_type == "compostable":
                 return render_template('compost.html', title=title, image=url_for('static', filename='image/'+filename))
             elif title_type == "trash":
                 return render_template('cannot.html', title=title, image=url_for('static', filename='image/'+filename))
-            
+            elif title_type == "recycle":
+                return render_template('can.html', title=title, image=url_for('static', filename='image/'+filename))
             else:
                 return render_template('nah.html', title=title, image=url_for('static', filename='image/'+filename))
             
