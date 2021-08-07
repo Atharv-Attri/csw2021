@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install libzbar0
+sudo apt-get install libzbar0 --force-yes
 pip install -r requirements.txt
 export FLASK_APP=index.py
 export FLASK_ENV=development
