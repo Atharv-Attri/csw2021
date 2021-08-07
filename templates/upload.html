@@ -1,4 +1,21 @@
-<form action="/upload" method=post enctype=multipart/form-data>
-    <input type=file name=file>
-    <input type=submit value=Upload>
+
+    <div class="flex w-full pb-32 py-16 items-center justify-center bg-grey-lighter">
+      <label class="w-80 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-blue">
+          <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+          </svg>
+          <span class="mt-2 text-base leading-normal">Select an image</span>
+          <form action="/upload" method=post enctype=multipart/form-data>
+            <input type=file onchange="form.submit()" name=file class="hidden">
+            <input type="submit" id="submit-form" class="hidden" />
+
   </form>
+
+</div>
+<!--
+<div class="flex w-full py-3 items-center justify-center bg-grey-lighter">
+  <button class="bg-blue-500 center hover:bg-blue-700 text-white w-64 font-bold py-2 px-4 rounded">
+  <label for="submit-form" tabindex="0">Submit</label>
+</button>
+</div>
+-->

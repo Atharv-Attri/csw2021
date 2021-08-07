@@ -4,6 +4,8 @@ from flask import Flask, flash, request, redirect, url_for, render_template, sen
 from werkzeug.utils import secure_filename
 
 from scan import decode_barcode
+import glob
+
 import converter
 UPLOAD_FOLDER = 'static/image'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
@@ -52,6 +54,9 @@ def notindata():
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
+    files = glob.glob('static/image/*')
+    for f in files:
+        os.remove(f)
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -64,6 +69,7 @@ def upload_file():
             flash('No selected file')
             return redirect(request.url)
         if file and allowed_file(file.filename):
+            
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             barcode = decode_barcode(os.path.join(".",app.config['UPLOAD_FOLDER'],
@@ -82,8 +88,7 @@ def upload_file():
                 return render_template('compost.html', title=title, image=url_for('static', filename='image/'+filename))
             elif title_type == "trash":
                 return render_template('cannot.html', title=title, image=url_for('static', filename='image/'+filename))
-            if title_type == "not in our database":
-                return render_template('notindata.html', title=title, image=url_for('static', filename='image/'+filename))
+            
             else:
                 return render_template('nah.html', title=title, image=url_for('static', filename='image/'+filename))
             
