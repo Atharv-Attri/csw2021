@@ -45,6 +45,11 @@ def about():
 def four_oh_four():
     return render_template('404.html')
 
+@app.route("/notindata")
+def notindata():
+    return render_template('notindata.html')
+
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -77,6 +82,8 @@ def upload_file():
                 return render_template('compost.html', title=title, image=url_for('static', filename='image/'+filename))
             elif title_type == "trash":
                 return render_template('cannot.html', title=title, image=url_for('static', filename='image/'+filename))
+            if title_type == "not in our database":
+                return render_template('notindata.html', title=title, image=url_for('static', filename='image/'+filename))
             else:
                 return render_template('nah.html', title=title, image=url_for('static', filename='image/'+filename))
             
