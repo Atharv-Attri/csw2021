@@ -1,0 +1,85 @@
+{% extends "template.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block title %}YESSSSS| Nameofthisthing{% endblock %}
+
+{% block content %}
+
+<section class="text-blueGray-700 ">
+  <div class="container flex flex-col items-center px-5 py-16 mx-auto md:flex-row lg:px-28">
+    <div class="flex flex-col items-start mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0">
+      <h1 class="mb-8 text-2xl font-black tracking-tighter text-black md:text-5xl title-font" >About <span style="font-size: 48px;
+        color: black;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        display: inline;
+        background-image: linear-gradient(#fff 60%, #a5ff97 55%);">Us</span></h1>
+      <p class="mb-8 text-base leading-relaxed text-left text-blueGray-600 ">Our mission here at Team WasteNothing is to create a website that allows you to scan any product and learn whether or not it is recyclable.</p>
+      <div class="flex flex-col justify-center lg:flex-row">
+        <a href="/" <button class="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Scan another!</button></a>
+        <p class="mt-2 text-sm text-left text-blueGray-600 md:ml-6 md:mt-0">Learn about how to, and the benefits of composting, recycling, and reusin! <br class="hidden lg:block">
+          <a href="https://lbre.stanford.edu/pssistanford-recycling/frequently-asked-questions/frequently-asked-questions-benefits-recycling" class="inline-flex items-center font-semibold text-blue-600 md:mb-2 lg:mb-0 hover:text-black " title="read more"> Take me there » </a>
+        </p>
+      </div>
+    </div>
+    <div class="w-full lg:w-5/6 lg:max-w-lg md:w-1/2">
+      <img class="object-cover object-center rounded-lg " alt="hero" src="https://dummyimage.com/720x600/F3F4F7/8693ac">
+    </div>
+  </div>
+</section>
+<section class="mx-auto" id="makers">
+  <div class="container px-5 mx-auto lg:px-24 lg:py-20">
+    <div class="flex flex-wrap -m-4">
+      <div class="p-4 mx-auto mb-6 lg:w-1/3 lg:mb-0">
+        <div class="h-full space-y-8 text-left">
+          <p class="text-base font-medium leading-relaxed text-blueGray-700 ">Hello, My name is Kavish Shah and I am a freshman who resides in Orange County, California. Some of my hobbies include programming, reading and playing tennis. My favorite programming language is Python and I'm currently focusing on learning how Python can be utilized in a variety of situations.  <br> If any of you reading this own a nice little company and are looking for high school interns - I'm available!</p>
+          <a class="inline-flex items-center w-full">
+            <img alt="blog" src="https://dummyimage.com/103x103" class="flex-shrink-0 object-cover object-center w-10 h-10 rounded-full">
+            <span class="flex flex-col flex-grow pl-3">
+              <h2 class="text-xs font-semibold tracking-widest text-black uppercase title-font"> Kavish Shah <span href="#" class="font-semibold text-Gray-400 lg:mb-0" style="color:#787878">Maker- #TeamWasteNothing</span>
+              </h2>
+            </span>
+          </a>
+          <span class="inline-flex justify-start sm:mt-0">
+            <a href="https://github.com/Kavish-Shah" class="ml-3 text-blue-500 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+            </a>
+        </div>
+      </div>
+      <div class="p-4 mx-auto mb-6 lg:w-1/3 lg:mb-0">
+        <div class="h-full space-y-8 text-left">
+          <p class="text-base font-medium leading-relaxed text-blueGray-700 ">
+            Hey! I'm Atharv Attri, a developer in Orange County, California. I'm a rising Freshman who loves to code. I mostly program in Python, but I also enjoy working on the front end with Next.js. I'm also a huge fan of reading about new tech and new ideas. My area of focus is Machine laerning, but I really enjoy making apps and sites too.<br>(Also looking for an internship btw- unpaid is fine :D)
+          </p>
+          <a class="inline-flex items-center w-full">
+            <img alt="blog" src="https://dummyimage.com/103x103" class="flex-shrink-0 object-cover object-center w-10 h-10 rounded-full">
+            <span class="flex flex-col flex-grow pl-3">
+              <h2 class="text-xs font-semibold tracking-widest text-black uppercase title-font"> Atharv Attri <span href="#" class="font-semibold text-Gray-400 lg:mb-0" style="color:#787878">Maker- #TeamWasteNothing</span>
+              </h2>
+            </span>
+          </a>
+          <span class="inline-flex justify-start sm:mt-0">
+            
+            <a href="https://twitter.com/AtharvAttri" class="ml-3 text-blue-500 hover:text-black">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://github.com/Atharv-Attri" class="ml-3 text-blue-500 hover:text-black">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+          </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

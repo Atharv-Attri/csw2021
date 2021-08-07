@@ -1,0 +1,25 @@
+.jose {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.kanit {
+    font-family: 'Kanit', sans-serif;
+}
+
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+.main-container {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; /* height of your footer */
+}
+footer {
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+}

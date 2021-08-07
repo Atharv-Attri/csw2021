@@ -4,7 +4,8 @@ from flask import Flask, flash, request, redirect, url_for, render_template, sen
 from werkzeug.utils import secure_filename
 
 from scan import decode_barcode
-UPLOAD_FOLDER = './images/'
+import converter
+UPLOAD_FOLDER = 'static/image'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
@@ -27,6 +28,22 @@ def can():
 def cannot():
     return render_template('cannot.html')
 
+@app.route("/compost")
+def compost():
+    return render_template('compost.html')
+
+@app.route("/nah")
+def nah():
+    return render_template('nah.html')
+
+
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+@app.route("/404")
+def four_oh_four():
+    return render_template('404.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
@@ -44,8 +61,23 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            print(decode_barcode(os.path.join(".",app.config['UPLOAD_FOLDER'],
-                               filename)))
+            barcode = decode_barcode(os.path.join(".",app.config['UPLOAD_FOLDER'],
+                               filename))
+            if barcode == "0":
+                    return render_template('404.html', image=url_for('static', filename='image/'+filename))
 
-            return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               filename)
+
+            title = converter.get_title(barcode)
+            title_type = converter.get_type(title)
+            if title_type == "ewaste":
+                return render_template('ewaste.html', title=title, image=url_for('static', filename='image/'+filename))
+            elif title_type == "recycle":
+                return render_template('can.html', title=title, image=url_for('static', filename='image/'+filename))
+            elif title_type == "compostable":
+                return render_template('compost.html', title=title, image=url_for('static', filename='image/'+filename))
+            elif title_type == "trash":
+                return render_template('cannot.html', title=title, image=url_for('static', filename='image/'+filename))
+            else:
+                return render_template('nah.html', title=title, image=url_for('static', filename='image/'+filename))
+            
+            
