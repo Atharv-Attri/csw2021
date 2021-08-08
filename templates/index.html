@@ -4,7 +4,6 @@
 
 {% block content %}
 
-<h3 class="text-light"><i>Mobile users: Please use landscape mode for the best UX!</i></h3>
   <section class="text-blueGray-700 ">
     <div class="container flex flex-col px-5 py-24 mx-auto lg:items-center">
       <div class="flex flex-col w-full mb-12 text-left lg:text-center" >
@@ -14,7 +13,7 @@
       </div>
       <div class="flex justify-left lg:justify-center ">
         <a href="{{ url_for('.index', _anchor='info') }}"><button class="flex items-center px-6 py-2 mt-auto mr-3 font-semibold text-blue-800 transition duration-500 ease-in-out transform bg-blue-100 rounded-lg hover:bg-blue-200 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">How does it work?</button></a>
-        <a href="{{ url_for('.index', _anchor='scan') }}"><button class="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2  animate__animated animate__pulse animate__delay-2s">Start scanning >></button></a>
+        <a href="{{ url_for('.index', _anchor='scan') }}"><button class="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2  animate__animated animate__bounceIn ">Start scanning >></button></a>
       </div>
     </div>
   </section>
@@ -23,47 +22,123 @@
   {% include "upload.html" %}
 </div>
 
-  <div class="container flex flex-col items-left px-5 py-8 mx-auto justify-end" >
-    <div class="flex flex-col w-full mb-12 text-left ">
-      <div class="w-full mx-auto lg:w-1/2" id="info">
-        <h2 class="mx-auto mb-6 text-xl font-semibold leading-none tracking-tighter text-black title-font"> Your Guide to Recycling </h2>
-        <p class="mx-auto mb-4 text-base font-medium leading-relaxed text-blueGray-700 "> Steps to navigate through our website </p>
-        <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
-          <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
-            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-            </svg>
-          </span> Step 1: Take a picture of your barcode and either upload it, or if you took an image in the app, it will be uploaded automatically(barcode must be EAN-13, as shown on the right)<br> 
-          <img src="https://cdn.discordapp.com/attachments/679165842633654282/873729840665202688/unknown.png" class="w-1/6 border"alt="EAN13" > 
-        </p>
-        <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
-          <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
-            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-            </svg>
-          </span> Step 2: Your result will now pop up on whether or not your product is recyclable 
-        </p>
-        <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
-          <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
-            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-            </svg>
-          </span> If your product is not recyclable, our website will show you recyclable alternatives to the product that you are buying 
-        </p>
-        <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
-          <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
-            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-            </svg>
-          </span> If your product is recyclable, you will be notified of that and it will also show you some recycling centers near you that will accept your item 
-        </p>
-      </div>
-    </div>
-  </div>
+  
+
+          <section class="text-blueGray-700 ">
+            <div class="container items-center px-5 py-8 mx-auto">
+              <div class="flex flex-wrap mb-12 text-left">
+                <div class="w-full mx-auto lg:w-1/3">
+                  <div class="p-6">
+                    <div class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto mb-5 text-black bg-blueGray-100 rounded-full">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 icon icon-tabler icon-tabler-aperture" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(72 12 12)"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(144 12 12)"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(216 12 12)"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(288 12 12)"></line>
+                      </svg>
+                    </div>
+                    <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl title-font"> Steps to navigate through our website </h1>
+                    <div class="w-full mx-auto" id="info">
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> Step 1: Take a picture of your barcode and either upload it, or if you took an image in the app, it will be uploaded automatically(barcode must be EAN-13, as shown on the right)<br> 
+                        <img src="https://cdn.discordapp.com/attachments/679165842633654282/873729840665202688/unknown.png" class="w-1/3 border"alt="EAN13" > 
+                      </p>
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> Step 2: Your result will now pop up on whether or not your product is recyclable 
+                      </p>
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> If your product is not recyclable, our website will show you recyclable alternatives to the product that you are buying 
+                      </p>
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> If your product is recyclable, you will be notified of that and it will also show you some recycling centers near you that will accept your item 
+                      </p>
+                      <section class="text-blueGray-700 ">
+                        <div class="container flex flex-col items-center px-5 py-8 mx-auto">
+                          <div class="flex flex-col w-full mb-12 text-left ">
+                            
+                          </div>
+                        </div>
+                      </section>
+                    </div>                  </div>
+                </div>
+                <div class="w-full mx-auto lg:w-1/3">
+                  <div class="p-6">
+                    <div class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto mb-5 text-black bg-blueGray-100 rounded-full">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 icon icon-tabler icon-tabler-aperture" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(72 12 12)"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(144 12 12)"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(216 12 12)"></line>
+                        <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(288 12 12)"></line>
+                      </svg>
+                    </div>
+                    <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl title-font"> How it Works  </h1>
+                    <div class="w-full mx-auto ">
+                      <p class="mx-auto mb-4 text-base font-medium leading-relaxed text-blueGray-700 "> You might be wondering how our site works, this is a step by step guide on how our project converts your image into recycling information! </p>
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> First the product number is extracted from the image that was inputted.
+                      </p>
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> The information extractd is then plugged into a database that outputs the required information about the product.
+                      </p>
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> A webscraper is then used to find keywords in the information outputted to find which category the product falls into.
+                      </p>
+                      <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
+                        <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
+                          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                          </svg>
+                        </span> Based upon the category that the product falls into, the user will be informed about the recyclability of the product. 
+                      </p>
+                    </div>                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+
 </section>
 {% endblock %}
 

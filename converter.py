@@ -35,6 +35,9 @@ def get_type(title):
     for item in data["recycle"]:
         if item in title:
             return "recycle"
+    for item in data["trash"]:
+        if item in title:
+            return "trash"
     return "not in our database"
 
 
