@@ -4,28 +4,28 @@
 
 {% block content %}
 
-<h3>Mobile users: Please use landscape mode for the best UX!</h3>
+<h3 class="text-light"><i>Mobile users: Please use landscape mode for the best UX!</i></h3>
   <section class="text-blueGray-700 ">
     <div class="container flex flex-col px-5 py-24 mx-auto lg:items-center">
-      <div class="flex flex-col w-full mb-12 text-left lg:text-center">
+      <div class="flex flex-col w-full mb-12 text-left lg:text-center" >
         <h2 class="mb-4 text-xs font-semibold tracking-widest text-black uppercase title-font">Every single one of us can make a major difference</h2>
         <h1 class="mb-6 text-2xl font-semibold tracking-tighter text-black sm:text-5xl title-font">  Find out if the product <br class="md:hidden">you're buying is eco friendly  </h1>
         <p class="mx-auto text-base font-medium leading-relaxed text-blueGray-700 lg:w-2/3">Just upload the barcode of the product you're looking at, and we'll tell you if it's eco friendly or not! </p>
       </div>
       <div class="flex justify-left lg:justify-center ">
-        <button class="flex items-center px-6 py-2 mt-auto mr-3 font-semibold text-blue-800 transition duration-500 ease-in-out transform bg-blue-100 rounded-lg hover:bg-blue-200 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">How does it work?</button>
-        <button class="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Start scanning >></button>
+        <a href="{{ url_for('.index', _anchor='info') }}"><button class="flex items-center px-6 py-2 mt-auto mr-3 font-semibold text-blue-800 transition duration-500 ease-in-out transform bg-blue-100 rounded-lg hover:bg-blue-200 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">How does it work?</button></a>
+        <a href="{{ url_for('.index', _anchor='scan') }}"><button class="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Start scanning >></button></a>
       </div>
     </div>
   </section>
 
-
+<div id="scan">
   {% include "upload.html" %}
+</div>
 
-
-  <div class="container flex flex-col items-center px-5 py-8 mx-auto">
+  <div class="container flex flex-col items-center px-5 py-8 mx-auto" >
     <div class="flex flex-col w-full mb-12 text-left ">
-      <div class="w-full mx-auto lg:w-1/2">
+      <div class="w-full mx-auto lg:w-1/2" id="info">
         <h2 class="mx-auto mb-6 text-xl font-semibold leading-none tracking-tighter text-black title-font"> Your Guide to Recycling </h2>
         <p class="mx-auto mb-4 text-base font-medium leading-relaxed text-blueGray-700 "> Steps to navigate through our website </p>
         <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
@@ -34,7 +34,8 @@
               <path fill="none" d="M0 0h24v24H0z"></path>
               <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
             </svg>
-          </span> Step 1: Open up your camera and scan the barcode on the product 
+          </span> Step 1: Take a picture of your barcode and either upload it, or if you took an image in the app, it will be uploaded automatically(barcode must be EAN-13, as shown on the right)<br> 
+          <img src="https://cdn.discordapp.com/attachments/679165842633654282/873729840665202688/unknown.png" class="w-1/6 border"alt="EAN13" > 
         </p>
         <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
           <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -42,7 +43,7 @@
               <path fill="none" d="M0 0h24v24H0z"></path>
               <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
             </svg>
-          </span> Step 2: Upload the image using the button provided below 
+          </span> Step 2: Your result will now pop up on whether or not your product is recyclable 
         </p>
         <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
           <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -50,15 +51,7 @@
               <path fill="none" d="M0 0h24v24H0z"></path>
               <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
             </svg>
-          </span> Step 3: Your result will now pop up on whether or not your product is recyclable 
-        </p>
-        <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
-          <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
-            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-            </svg>
-          </span> If your product is not recyclable, our website will show you recyclable alternatives to the product that your are buying 
+          </span> If your product is not recyclable, our website will show you recyclable alternatives to the product that you are buying 
         </p>
         <p class="flex items-center mb-2 font-semibold text-blueGray-700 ">
           <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">

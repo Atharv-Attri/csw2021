@@ -19,7 +19,7 @@ def allowed_file(filename):
 
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html', text="Hello, world")
 
 @app.route("/can")

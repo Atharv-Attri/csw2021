@@ -62,7 +62,9 @@
         "metal", 
         "aluminum",
         "steel",
-        "pencil"
+        "pencil",
+        "crayons",
+        
         
     ],
     "compostable": [
@@ -104,7 +106,9 @@
     ],
     "trash": [
         "bag",
-        "glue"
+        "glue",
+        "pen",
+        
     ]
 
 }
