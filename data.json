@@ -64,8 +64,15 @@
         "steel",
         "pencil",
         "crayons",
-        
-        
+        "magazine",
+        "catalog",
+        "book",
+        "mail",
+        "tissue box",
+        "folder",
+        "tin",
+        "glass",
+        "jug"    
     ],
     "compostable": [
         "banana",
@@ -108,7 +115,31 @@
         "bag",
         "glue",
         "pen",
-        
+        "paint",
+        "ink",
+        "bubble wrap",
+        "dish",
+        "cord",
+        "wire",
+        "mug",
+        "diaper",
+        "propane",
+        "flammable",
+        "toxic",
+        "candy",
+        "clothes",
+        "hangar",
+        "ceramic",
+        "aerosol",
+        "toys",
+        "cloth",
+        "cleaning",
+        "napkin",
+        "wax",
+        "wrapping",
+        "oil",
+        "marble",
+        "crystal"
     ]
 
 }
