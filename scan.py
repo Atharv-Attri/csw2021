@@ -6,5 +6,4 @@ def decode_barcode(image_path: str) -> str:
     try:
         return decode(Image.open(image_path))[0].data.decode("utf-8")
     except IndexError:
-        print("AHHHHH")
-        return "0"
+        return "0"  # Return 0 if no barcode is found

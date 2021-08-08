@@ -17,10 +17,10 @@ def get_title(url):
         if r.status_code == 404:
             return "404"
         text = re.findall(r"<b>Commercial name<\/b> ?: ?(.+?) ?<br>", str(r.content))[0]
-
+# Extracts the name of the product from the webpage
     return text
 
-
+# based on the information in data.json, it routes to a different page
 def get_type(title):
     title = title.lower()
     with open("data.json", "r") as f:
