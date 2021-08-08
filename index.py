@@ -70,7 +70,7 @@ def notindata():
 # Deals with our database not having organic products
 @app.route("/compost-static")
 def compost_static():
-    return render_template("compost-static.html"
+    return render_template("compost-static.html")
 
 #Route for ewaste
 @app.route("/ewaste")
