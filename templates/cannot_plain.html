@@ -1,4 +1,4 @@
-/{% extends "template.html" %}
+{% extends "template.html" %}
 
 {% block head %}
 {% endblock %}
@@ -16,20 +16,20 @@
         font-family: 'Roboto', sans-serif;
         font-weight: 900;
         display: inline;
-        background-image: linear-gradient(#fff 60%, #fda2a2 55%);">Unknown</span></h1>
-      <p class="mb-8 text-base leading-relaxed text-left text-blueGray-600 ">We do not know if this product can be recycled! Time for you to use your best judgement!</p>
-
+        background-image: linear-gradient(#fff 60%, #fda2a2 55%);">Not Recyclable!</span></h1>
+      <p class="mb-8 text-base leading-relaxed text-left text-blueGray-600 ">{{ title }} cannot be recycled! You may want to look for some alternatives that are more eco friendly!</p>
       <div class="flex flex-col justify-center lg:flex-row">
         <a href="/" <button class="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Scan another!</button></a>
-        <p class="mt-2 text-sm text-left text-blueGray-600 md:ml-6 md:mt-0">If this is an organic product (vegetables, fruits, ect.) <br class="hidden lg:block">
-          <a href="/compost-static" class="inline-flex items-center font-semibold text-blue-600 md:mb-2 lg:mb-0 hover:text-black " title="read more"> Click here » </a>
+        <p class="mt-2 text-sm text-left text-blueGray-600 md:ml-6 md:mt-0">Learn more about the importance to recycling <br class="hidden lg:block">
+          <a href="https://lbre.stanford.edu/pssistanford-recycling/frequently-asked-questions/frequently-asked-questions-benefits-recycling" class="inline-flex items-center font-semibold text-blue-600 md:mb-2 lg:mb-0 hover:text-black " title="read more"> Take me there » </a>
         </p>
       </div>
     </div>
     <div class="w-full lg:w-5/6 lg:max-w-lg md:w-1/2">
-      <img class="object-cover object-center rounded-lg " alt="hero" src="{{ image }}">
+        <img class="object-cover object-center rounded-lg " alt="hero" src="{{ image }}">
     </div>
   </div>
 </section>
+
 
 {% endblock %}

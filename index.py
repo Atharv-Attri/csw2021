@@ -15,12 +15,15 @@ from scan import decode_barcode
 import glob
 
 import converter
+import json
 
 UPLOAD_FOLDER = "static/image"
 ALLOWED_EXTENSIONS = {"txt", "pdf", "png", "jpg", "jpeg", "gif"}
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+with open("alter.json", "r") as f:
+    alter = json.loads(f.read())
 
 
 def allowed_file(filename):
@@ -75,6 +78,10 @@ def compost_static():
 def works():
     return render_template("works.html")
 
+@app.route("/ewaste")
+def ewaste():
+    return render_template("ewaste.html")
+
 @app.route("/upload", methods=["GET", "POST"])
 def upload_file():
     files = glob.glob("static/image/*")
@@ -105,26 +112,35 @@ def upload_file():
 
             title = converter.get_title(barcode)
             title_type = converter.get_type(title)
-            if title_type == "ewaste":
+            if title_type[0] == "ewaste":
                 return render_template(
                     "ewaste.html",
                     title=title,
                     image=url_for("static", filename="image/" + filename),
                 )
 
-            elif title_type == "compostable":
+            elif title_type[0] == "compostable":
                 return render_template(
                     "compost.html",
                     title=title,
                     image=url_for("static", filename="image/" + filename),
                 )
-            elif title_type == "trash":
-                return render_template(
-                    "cannot.html",
-                    title=title,
-                    image=url_for("static", filename="image/" + filename),
-                )
-            elif title_type == "recycle":
+            elif title_type[0] == "trash":
+                global alter
+                try:
+                    return render_template(
+                        "cannot.html",
+                        title=title,
+                        image=url_for("static", filename="image/" + filename ),
+                        data=alter[title_type[1]]
+                    )
+                except KeyError:
+                    return render_template(
+                        "cannot_plain.html",
+                        title=title,
+                        image=url_for("static", filename="image/" + filename ),
+                    )
+            elif title_type[0] == "recycle":
                 return render_template(
                     "can.html",
                     title=title,

@@ -28,16 +28,16 @@ def get_type(title):
         return "404"
     for item in data["ewaste"]:
         if item in title:
-            return "ewaste"
+            return ["ewaste"]
     for item in data["compostable"]:
         if item in title:
-            return "compostable"
+            return ["compostable"]
     for item in data["recycle"]:
         if item in title:
-            return "recycle"
+            return ["recycle"]
     for item in data["trash"]:
         if item in title:
-            return "trash"
-    return "not in our database"
+            return ["trash", item]
+    return ["not in our database"]
 
 
