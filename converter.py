@@ -1,6 +1,7 @@
-import requests
 import json
 import re
+
+import requests
 
 
 def get_title(url):
@@ -39,5 +40,3 @@ def get_type(title):
         if item in title:
             return ["trash", item]
     return ["not in our database"]
-
-

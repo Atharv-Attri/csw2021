@@ -1,21 +1,12 @@
+import glob
+import json
 import os
-from flask import (
-    Flask,
-    flash,
-    request,
-    redirect,
-    url_for,
-    render_template,
-    send_from_directory,
-)
 
+from flask import Flask, flash, redirect, render_template, request, url_for
 from werkzeug.utils import secure_filename
 
-from scan import decode_barcode
-import glob
-
 import converter
-import json
+from scan import decode_barcode
 
 UPLOAD_FOLDER = "static/image"
 ALLOWED_EXTENSIONS = {"txt", "pdf", "png", "jpg", "jpeg", "gif"}
@@ -74,13 +65,16 @@ def notindata():
 def compost_static():
     return render_template("compost-static.html")
 
+
 @app.route("/works")
 def works():
     return render_template("works.html")
 
+
 @app.route("/ewaste")
 def ewaste():
     return render_template("ewaste.html")
+
 
 @app.route("/upload", methods=["GET", "POST"])
 def upload_file():
@@ -131,14 +125,14 @@ def upload_file():
                     return render_template(
                         "cannot.html",
                         title=title,
-                        image=url_for("static", filename="image/" + filename ),
-                        data=alter[title_type[1]]
+                        image=url_for("static", filename="image/" + filename),
+                        data=alter[title_type[1]],
                     )
                 except KeyError:
                     return render_template(
                         "cannot_plain.html",
                         title=title,
-                        image=url_for("static", filename="image/" + filename ),
+                        image=url_for("static", filename="image/" + filename),
                     )
             elif title_type[0] == "recycle":
                 return render_template(

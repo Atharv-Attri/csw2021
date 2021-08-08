@@ -1,6 +1,5 @@
-import os
-from pyzbar.pyzbar import decode
 from PIL import Image
+from pyzbar.pyzbar import decode
 
 
 def decode_barcode(image_path: str) -> str:
