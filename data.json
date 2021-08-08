@@ -61,7 +61,8 @@
         "packaging",
         "metal", 
         "aluminum",
-        "steel"
+        "steel",
+        "pencil"
         
     ],
     "compostable": [
@@ -103,7 +104,7 @@
     ],
     "trash": [
         "bag",
-        ""
+        "glue"
     ]
 
 }

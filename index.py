@@ -51,6 +51,10 @@ def four_oh_four():
 def notindata():
     return render_template('notindata.html')
 
+@app.route("/compost-static")
+def compost_static():
+    return render_template('compost-static.html')
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():

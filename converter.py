@@ -1,14 +1,21 @@
 import requests
 import json
+import re
 
 def get_title(url):
     URL = f"https://api.upcitemdb.com/prod/trial/lookup?upc={url}"
     r = requests.get(URL)
     obj = json.loads(r.content)    # obj now contains a dict of the data
     try:
+        print(obj)
         text = obj['items'][0]['title']
-    except IndexError:
-        return "404"
+    except (IndexError, KeyError) as e:
+        URL = f"https://product-open-data.com/gtin/{url}"
+        r = requests.get(URL)
+        if r.status_code == 404:
+            return "404"
+        text = re.findall(r"<b>Commercial name<\/b> : (.+)<br>", str(r.content))[0]
+    
     return text
 
 
