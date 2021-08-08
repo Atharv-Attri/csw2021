@@ -71,6 +71,9 @@ def notindata():
 def compost_static():
     return render_template("compost-static.html")
 
+@app.route("/works")
+def works():
+    return render_template("works.html")
 
 @app.route("/upload", methods=["GET", "POST"])
 def upload_file():

@@ -15,7 +15,7 @@ def get_title(url):
         r = requests.get(URL)
         if r.status_code == 404:
             return "404"
-        text = re.findall(r"<b>Commercial name<\/b> : (.+)<br>", str(r.content))[0]
+        text = re.findall(r"<b>Commercial name<\/b> ?: ?(.+?) ?<br>", str(r.content))[0]
 
     return text
 
@@ -38,4 +38,3 @@ def get_type(title):
     return "not in our database"
 
 
-print(get_type(get_title("0078742351889")))
